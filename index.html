@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTM・GA連携デモページ</title>
+
+  <!-- ====== CSS ====== -->
+  <style>
+    :root {
+      --green-dark: #14532d;
+      --green: #166534;
+      --green-light: #86efac;
+      --gray: #6b7280;
+      --bg-light: #f9fafb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #111;
+      background-color: #fff;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--green-dark);
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    /* === MV Section === */
+    #mv {
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 6rem 1rem;
+    }
+
+    #mv h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    #mv p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    #mv a {
+      background: #fff;
+      color: var(--green-dark);
+      padding: 0.8rem 2rem;
+      border-radius: 9999px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    #mv a:hover {
+      background: #e5e5e5;
+    }
+
+    /* === Column Section === */
+    #column {
+      padding: 4rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    #column h3 {
+      color: var(--green-dark);
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .column-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .column-card {
+      border: 1px solid #ddd;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: box-shadow 0.3s;
+      background: #fff;
+    }
+
+    .column-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .column-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .column-card p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .column-card a {
+      color: var(--green);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .column-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* === News Section === */
+    #news {
+      background: var(--bg-light);
+      padding: 4rem 1rem;
+    }
+
+    #news h3 {
+      color: var(--green-dark);
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .news-list {
+      max-width: 800px;
+      margin: 0 auto;
+      list-style: none;
+    }
+
+    .news-list li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 0.75rem 0;
+      font-size: 0.95rem;
+    }
+
+    .news-list a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .news-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Footer === */
+    footer {
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 640px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 0.5rem;
+      }
+
+      nav a {
+        margin: 0 0.75rem 0 0;
+      }
+
+      #mv h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  <!-- Google Tag Manager（ここにGTMコードを挿入） -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Demo Site</h1>
+    <nav>
+      <a href="#mv">ホーム</a>
+      <a href="#column">コラム</a>
+      <a href="#news">お知らせ</a>
+    </nav>
+  </header>
+
+  <!-- MV Section -->
+  <section id="mv">
+    <h2>GTM & GA デモページ</h2>
+    <p>トラッキングテスト用のシンプルなデモページです。</p>
+    <a href="#column" id="cta-btn">詳しく見る</a>
+  </section>
+
+  <!-- Column Section -->
+  <section id="column">
+    <h3>コラム</h3>
+    <div class="column-grid">
+      <article class="column-card">
+        <h4>コラムタイトル1</h4>
+        <p>ここにダミーテキストが入ります。レスポンシブ対応のカードです。</p>
+        <a href="#">続きを読む</a>
+      </article>
+      <article class="column-card">
+        <h4>コラムタイトル2</h4>
+        <p>ここにダミーテキストが入ります。デザインの確認にも使えます。</p>
+        <a href="#">続きを読む</a>
+      </article>
+      <article class="column-card">
+        <h4>コラムタイトル3</h4>
+        <p>ここにダミーテキストが入ります。GTM連携ボタンも設置可能です。</p>
+        <a href="#">続きを読む</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section id="news">
+    <h3>お知らせ</h3>
+    <ul class="news-list">
+      <li><span>2025/10/01</span><a href="#">デモサイト公開のお知らせ</a></li>
+      <li><span>2025/09/15</span><a href="#">GTMテスト開始のお知らせ</a></li>
+      <li><span>2025/09/01</span><a href="#">初期設定について</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Demo Site</p>
+  </footer>
+
+  <!-- Google Tag Manager (noscript fallback) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</body>
+</html>
